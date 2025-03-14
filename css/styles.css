@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.city-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.city-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0; /* Light grey background color */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.city-block h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.city-block p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.event-type-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #e0f7fa; /* Light cyan background color */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.event-type-block h2 {
+    font-size: 24px;
+    color: #00796b; /* Dark cyan color */
+    margin-bottom: 10px;
+}
+
+.event-type-block p {
+    font-size: 16px;
+    color: #004d40; /* Darker cyan color */
+    line-height: 1.5;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.left-panel {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.active-event {
+    flex: 2;
+    background-color: #a5d6a7; /* Light green background color */
+    color: #ffffff; /* White text color */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.passive-event {
+    flex: 1;
+    background-color: #388e3c; /* Dark green background color */
+    color: #ffffff; /* White text color */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.passive-event a {
+    color: #ffffff; /* White text color for links */
+    text-decoration: none;
+}
+
+.right-panel {
+    width: 66%;
+    padding-left: 10px;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    background-color: #e0e0e0;
+}
