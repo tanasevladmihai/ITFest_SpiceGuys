@@ -8,7 +8,6 @@ from .models import Event, City, Category
 from .serializers import EventSerializer
 from django.utils import timezone
 
-# Template Views
 def city_list(request):
     cities = City.objects.all()
     return render(request, 'cities.html', {'cities': cities})
@@ -27,7 +26,6 @@ def event_map(request, city_id, category_id):
         'GOOGLE_MAPS_API_KEY': settings.GOOGLE_MAPS_API_KEY
     })
 
-# API View
 class EventListAPIView(APIView):
     def get(self, request, city_id, category_id):
         user_location = request.GET.get('location', '0,0')  # Format: lng,lat

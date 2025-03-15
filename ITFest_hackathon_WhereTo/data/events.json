@@ -1,60 +1,65 @@
 [
     {
-        "model": "events.city",
+        "model": "where_to.events.city",
         "pk": 1,
         "fields": {
-            "name": "New York"
+            "name": "Timișoara"
         }
     },
     {
-        "model": "events.category",
+        "model": "where_to.events.city",
+        "pk": 2,
+        "fields": {
+            "name": "Cluj-Napoca"
+        }
+    },
+    {
+        "model": "where_to.events.city",
+        "pk": 3,
+        "fields": {
+            "name": "București"
+        }
+    },
+    {
+        "model": "where_to.events.city",
+        "pk": 4,
+        "fields": {
+            "name": "Brașov"
+        }
+    },
+    {
+        "model": "where_to.events.city",
+        "pk": 5,
+        "fields": {
+            "name": "Oradea"
+        }
+    },
+    {
+        "model": "where_to.events.category",
         "pk": 1,
         "fields": {
             "name": "University Events"
         }
     },
     {
-        "model": "events.category",
+        "model": "where_to.events.category",
         "pk": 2,
         "fields": {
-            "name": "Festivals"
+            "name": "Clubs"
         }
     },
     {
-        "model": "events.category",
+        "model": "where_to.events.category",
         "pk": 3,
         "fields": {
-            "name": "Conventions"
+            "name": "Music Festivals"
         }
     },
     {
-        "model": "events.event",
-        "pk": 1,
+        "model": "where_to.events.category",
+        "pk": 4,
         "fields": {
-            "name": "NYU Lecture Series",
-            "category": 1,
-            "city": 1,
-            "theme": "education",
-            "address": "70 Washington Square South, New York, NY 10012",
-            "location": "POINT(-73.996225 40.729513)",
-            "start_date": "2025-03-20T10:00:00Z",
-            "end_date": "2025-03-20T12:00:00Z",
-            "description": "A series of lectures on AI advancements."
-        }
-    },
-    {
-        "model": "events.event",
-        "pk": 2,
-        "fields": {
-            "name": "Spring Festival",
-            "category": 2,
-            "city": 1,
-            "theme": "entertainment",
-            "address": "Central Park, New York, NY 10024",
-            "location": "POINT(-73.965355 40.782865)",
-            "start_date": "2025-04-01T12:00:00Z",
-            "end_date": "2025-04-01T20:00:00Z",
-            "description": "Annual spring festival with music and food."
+            "name": "Charity Work"
         }
     }
 ]

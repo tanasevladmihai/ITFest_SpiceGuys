@@ -81,13 +81,14 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': 'events_db',
-        'USER': 'spiceguys',
-        'PASSWORD': 'spiceguys25',
-        'HOST': 'localhost',
-        'PORT': '',
+        'USER': 'neondb_owner',
+        'PASSWORD': 'npg_L4stK6DprOdU',
+        'HOST': 'ep-restless-haze-a2pi3f7f-pooler.eu-central-1.aws.neon.tech',
+        'PORT': '5432',
+        'OPTIONS': {'sslmode' : 'require'},
     }
 }
-
+#postgresql://neondb_owner:npg_L4stK6DprOdU@ep-restless-haze-a2pi3f7f-pooler.eu-central-1.aws.neon.tech/events_db?sslmode=require
  # Replace with valid key
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
