@@ -60,22 +60,24 @@ function updateElementContent(element, content, isLarge) {
     }
 }
 
-function goToEventTypes() {
-    window.location.href = 'event_types.html';
-}
-
 function swapCity(smallCityBlock) {
-    const largeCityBlock = document.querySelector('.city-block-large');
+    const largeCityBlock = document.getElementById('city-large');
 
-    // Swap the inner HTML of the large and small city blocks
+    // Swap inner HTML
     const tempHTML = largeCityBlock.innerHTML;
     largeCityBlock.innerHTML = smallCityBlock.innerHTML;
     smallCityBlock.innerHTML = tempHTML;
 
-    // Swap the background images
-    const tempBackgroundImage = largeCityBlock.style.backgroundImage;
-    largeCityBlock.style.backgroundImage = smallCityBlock.style.backgroundImage;
-    smallCityBlock.style.backgroundImage = tempBackgroundImage;
+    // Swap background images
+    const largeBackgroundImage = window.getComputedStyle(largeCityBlock).backgroundImage;
+    const smallBackgroundImage = window.getComputedStyle(smallCityBlock).backgroundImage;
+
+    largeCityBlock.style.backgroundImage = smallBackgroundImage;
+    smallCityBlock.style.backgroundImage = largeBackgroundImage;
+}
+
+function goToEventTypes() {
+    window.location.href = 'event_types.html';
 }
 
 // Existing code for other functionalities
