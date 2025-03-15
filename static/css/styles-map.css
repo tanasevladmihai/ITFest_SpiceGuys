@@ -1,0 +1,135 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden; /* Disable scrolling */
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+}
+
+.btn {
+    background: black;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    position: absolute;
+    left: 20px;
+    z-index: 1; /* Below wipe-effect */
+}
+
+/* Wipe effect - Now fully covers buttons */
+.wipe-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    transition: width 1s ease-in-out;
+    z-index: 2; /* Above everything */
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 80px); /* Full height minus header */
+}
+
+.left-container {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px; /* Rounded corners */
+    margin: 10px; /* Margin to separate from other elements */
+}
+
+.next-element-btn {
+    background: black;
+    color: white;
+    border: none;
+    padding: 5px 15px 15px 15px; /* Adjusted padding */
+    cursor: pointer;
+    height: 7.5%;
+    display: flex;
+    align-items: flex-end; /* Align text to the bottom */
+    justify-content: flex-start; /* Align text to the left */
+    border-radius: 10px; /* Added border radius */
+    margin: 5px; /* Adjusted margin */
+    text-align: left; /* Align text to the left */
+    font-size: 16px; /* Adjusted font size */
+    font-weight: bold; /* Bold text */
+}
+
+.large-element {
+    background-color: #FFD700; /* Dark yellow */
+    height: 58.5%; /* Adjusted height */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align text to the left */
+    justify-content: flex-end; /* Align text to the bottom */
+    transition: opacity 0.5s ease-in-out;
+    border-radius: 10px; /* Added border radius */
+    margin: 5px; /* Adjusted margin */
+    padding: 15px; /* Added padding */
+    text-align: left; /* Align text to the left */
+}
+
+.small-element {
+    background-color: #FFECB3; /* Light yellow */
+    height: 17%; /* Adjusted height */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align text to the left */
+    justify-content: flex-end; /* Align text to the bottom */
+    transition: opacity 0.5s ease-in-out;
+    border-radius: 10px; /* Added border radius */
+    margin: 5px; /* Adjusted margin */
+    padding: 15px; /* Added padding */
+    text-align: left; /* Align text to the left */
+}
+
+.small-element:nth-child(3) {
+    background-color: #FFF8DC; /* Lighter yellow */
+}
+
+.right-container {
+    width: 75%;
+    background-color: #F0F0F0; /* Light grey for contrast */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align text to the left */
+    justify-content: flex-end; /* Align text to the bottom */
+    border-radius: 10px; /* Added border radius */
+    margin: 5px; /* Adjusted margin */
+    text-align: left; /* Align text to the left */
+    overflow: hidden; /* Ensure the iframe fits within the container */
+}
+
+.right-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none; /* Remove border */
+    border-radius: 10px; /* Match the container's border radius */
+}
+
+.fade-out {
+    opacity: 0;
+    transform: translateY(-20px); /* Moves up */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.slide-in {
+    opacity: 0;
+    transform: translateY(20px); /* Starts below */
+}
+
+.slide-in-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}

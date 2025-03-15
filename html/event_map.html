@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Map</title>
+    <link rel="stylesheet" href="/static/css/styles-map.css">
+    <link rel="stylesheet" href="../static/css/styles-main.css">
+</head>
+<body>
+    <div class="header">        
+        <h1 class="head-title">Discover events and activities around you</h1>
+        <a href="./event_types.html" class="event-category-button" onclick="startTransition('event_types.html')">
+            <h3>[inserteventype]</h3>
+        </a>
+        <a href="./city_page.html" class="city-button" onclick="startTransition('city_page.html')">
+            <h3>[insertcityname]</h3>
+        </a>
+        <div class="wipe-effect" id="wipeEffect" style="width: 100%;"></div>
+    </div>
+
+    <div class="container">
+        <div class="left-container">
+            <button class="next-element-btn" onclick="nextElement()">Next Element</button>
+
+            <div class="large-element" id="largeElement">
+                <h2>Large Element</h2>
+                <ul>
+                    <li>Information 1</li>
+                    <li>Information 2</li>
+                    <li>Information 3</li>
+                    <li>Information 4</li>
+                </ul>
+            </div>
+            <div class="small-element" id="smallElement1">
+                <h3>Small Element 1</h3>
+                <p>Information 1</p>
+            </div>
+            <div class="small-element" id="smallElement2">
+                <h3>Small Element 2</h3>
+                <p>Information 1</p>
+            </div>
+        </div>
+        <div class="right-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22266.65731645687!2d21.2221518!3d45.764533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47456781c61f0309%3A0x2eeab00d1d7e7be2!2sPia%C8%9Ba%20Unirii!5e0!3m2!1sro!2sro!4v1742056336582!5m2!1sro!2sro" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+
+    <script>
+        const elements = [
+            { title: 'Large Element', info: ['Information 1', 'Information 2', 'Information 3', 'Information 4'] },
+            { title: 'Small Element 1', info: ['Information 1', 'Information 2', 'Information 3', 'Information 4'] },
+            { title: 'Small Element 2', info: ['Information 1', 'Information 2', 'Information 3', 'Information 4'] },
+            { title: 'New Element', info: ['Information 1', 'Information 2', 'Information 3', 'Information 4'] }
+        ];
+
+        function nextElement() {
+            const largeElement = document.getElementById('largeElement');
+            const smallElement1 = document.getElementById('smallElement1');
+            const smallElement2 = document.getElementById('smallElement2');
+
+            // Apply fade-out effect
+            largeElement.classList.add('fade-out');
+            smallElement1.classList.add('fade-out');
+            smallElement2.classList.add('fade-out');
+
+            setTimeout(() => {
+                // Shift elements
+                updateElementContent(largeElement, elements[1], true);
+                updateElementContent(smallElement1, elements[2], false);
+                updateElementContent(smallElement2, elements[3], false);
+
+                // Rotate elements array
+                elements.push(elements.shift());
+
+                // Remove old classes & apply slide-in effect
+                largeElement.classList.remove('fade-out');
+                smallElement1.classList.remove('fade-out');
+                smallElement2.classList.remove('fade-out');
+
+                largeElement.classList.add('slide-in');
+                smallElement1.classList.add('slide-in');
+                smallElement2.classList.add('slide-in');
+
+                setTimeout(() => {
+                    largeElement.classList.remove('slide-in');
+                    largeElement.classList.add('slide-in-active');
+                    smallElement1.classList.remove('slide-in');
+                    smallElement1.classList.add('slide-in-active');
+                    smallElement2.classList.remove('slide-in');
+                    smallElement2.classList.add('slide-in-active');
+
+                    // Remove slide-in-active class after animation completes
+                    setTimeout(() => {
+                        largeElement.classList.remove('slide-in-active');
+                        smallElement1.classList.remove('slide-in-active');
+                        smallElement2.classList.remove('slide-in-active');
+                    }, 500); // Match the duration of the slide-in transition
+                }, 50); // Small delay for a smoother transition
+            }, 500); // Match the fade-out duration
+        }
+
+        function updateElementContent(element, content, isLarge) {
+            element.querySelector('h2, h3').innerText = content.title;
+            if (isLarge) {
+                element.querySelector('ul').innerHTML = content.info.map(info => `<li>${info}</li>`).join('');
+            } else {
+                element.querySelector('p').innerText = content.info[0];
+            }
+        }
+
+        function startTransition(targetPage) {
+            let wipe = document.getElementById("wipeEffect");
+            wipe.style.width = "100%"; // Expand wipe over the header
+
+            setTimeout(() => {
+                localStorage.setItem("wipeActive", "true"); // Save transition state
+                window.location.href = targetPage;
+            }, 1000);
+        }
+
+        // Entry animation for Page 1
+        window.onload = function() {
+            let wipe = document.getElementById("wipeEffect");
+            wipe.style.transition = "none"; // Start fully covered
+            wipe.style.width = "100%";
+
+            setTimeout(() => {
+                wipe.style.transition = "width 1s ease-in-out";
+                wipe.style.width = "0%"; // Reveal header
+            }, 50);
+        };
+    </script>
+
+</body>
+</html>

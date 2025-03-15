@@ -1,8 +1,8 @@
 body {
     margin: 0;
-    padding: 20px;
+    padding: 10px;
     box-sizing: border-box;
-    background-color: #ffffff; /* Background color of the website */
+    background-color: #fcfcfc; /* Background color of the website */
     color: #0c0c0c; /* Text color */
 }
 
@@ -16,6 +16,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px; /* Rounded corners */
     margin: 10px; /* Margin to separate from other elements */
+    z-index: 1;
 }
 
 .header .head-title {
@@ -23,13 +24,6 @@ body {
     text-align: center;
     color: #ffffff; /* White text color */
     font-size: 24px;
-}
-
-.header .back-button {
-    color: #ffffff; /* White text color */
-    font-size: 18px;
-    text-decoration: none;
-    cursor: pointer;
 }
 
 .city-button, .event-category-button {
@@ -47,12 +41,9 @@ body {
     margin-right: 20px; /* Margin to separate from other elements */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 5px; /* Padding for the text */
-}
-
-.link-button h3 {
-    font-size: 12px;
-    margin: 0;
-    color: #ffffff; /* White text color */
+    cursor: pointer;
+    left: 20px;
+    z-index: 1; /* Below wipe-effect */
 }
 
 .city-grid {

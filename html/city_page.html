@@ -4,31 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cities</title>
-    <link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/styles-main.css">
+    <link rel="stylesheet" href="/static/css/styles-city.css">
 </head>
 <body>
     <div class="header">
         <h1 class="head-title">Choose your city</h1>
     </div>
     <div class="city-grid">
-        <div class="city-block-large">
+        <button class="city-block-large city-block" onclick="goToEventTypes()">
             <h2>City 1</h2>
             <p>Description for city 1</p>
-        </div>
+        </button>
         <div class="city-block-small-container">
-            <div class="city-block-small">
+            <button class="city-block-small city-block" onclick="swapCity(this)">
                 <h2>City 2</h2>
                 <p>Description for city 2</p>
-            </div>
-            <div class="city-block-small">
+            </button>
+            <button class="city-block-small city-block" onclick="swapCity(this)">
                 <h2>City 3</h2>
                 <p>Description for city 3</p>
-            </div>
-            <div class="city-block-small">
+            </button>
+            <button class="city-block-small city-block" onclick="swapCity(this)">
                 <h2>City 4</h2>
                 <p>Description for city 4</p>
-            </div>
+            </button>
         </div>
     </div>
+    <script src="/static/js/scripts.js"></script>
 </body>
 </html>

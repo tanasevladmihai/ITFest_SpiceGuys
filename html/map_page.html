@@ -4,18 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Map Page</title>
-    <link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="stylesheet" href="../static/css/styles-main.css">
+    <link rel="stylesheet" href="../static/css/styles-map.css">
 </head>
 <body>
     <div class="header">
         <h1 class="head-title">Discover events and activities around you</h1>
-        <a href="./event_types.html" class="event-category-button">
+        <a href="./event_types.html" class="event-category-button" onclick="startTransition('event_types.html')">
             <h3>[inserteventype]</h3>
         </a>
-        <a href="./city_page.html" class="city-button">
+        <a href="./city_page.html" class="city-button" onclick="startTransition('city_page.html')">
             <h3>[insertcityname]</h3>
         </a>
+        <div class="wipe-effect" id="wipeEffect"></div>
     </div>
+    
     <div class="container">
         <div class="left-panel">
             <div class="active-event">
@@ -38,5 +41,6 @@
             </div>
         </div>
     </div>
+    <script src="../static/js/scripts.js"></script>
 </body>
 </html>
