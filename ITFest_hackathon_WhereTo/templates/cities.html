@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cities</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="header">
+        <h1 class="head-title">Choose your city</h1>
+    </div>
+    <div class="city-grid">
+        {% for city in cities %}
+            <div class="city-block-large">
+                <a href="{% url 'category_list' city.id %}">
+                    <h2>{{ city.name }}</h2>
+                    <p>Explore events in {{ city.name }}</p>
+                </a>
+            </div>
+        {% empty %}
+            <p>No cities available.</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
