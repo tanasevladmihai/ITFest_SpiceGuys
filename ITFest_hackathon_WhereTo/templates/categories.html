@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories in {{ city.name }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="header">
+        <h1 class="head-title">Discover events in {{ city.name }}</h1>
+    </div>
+    <div class="event-grid">
+        {% for category in categories %}
+            <div class="event-type-block">
+                <a href="{% url 'event_list' city.id category.id %}">
+                    <h2>{{ category.name }}</h2>
+                    <p>View {{ category.name }} in {{ city.name }}</p>
+                </a>
+            </div>
+        {% empty %}
+            <p>No categories available.</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
