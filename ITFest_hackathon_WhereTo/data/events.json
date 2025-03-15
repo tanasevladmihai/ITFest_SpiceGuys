@@ -1,65 +1,11 @@
 [
-    {
-        "model": "where_to.events.city",
-        "pk": 1,
-        "fields": {
-            "name": "Timișoara"
-        }
-    },
-    {
-        "model": "where_to.events.city",
-        "pk": 2,
-        "fields": {
-            "name": "Cluj-Napoca"
-        }
-    },
-    {
-        "model": "where_to.events.city",
-        "pk": 3,
-        "fields": {
-            "name": "București"
-        }
-    },
-    {
-        "model": "where_to.events.city",
-        "pk": 4,
-        "fields": {
-            "name": "Brașov"
-        }
-    },
-    {
-        "model": "where_to.events.city",
-        "pk": 5,
-        "fields": {
-            "name": "Oradea"
-        }
-    },
-    {
-        "model": "where_to.events.category",
-        "pk": 1,
-        "fields": {
-            "name": "University Events"
-        }
-    },
-    {
-        "model": "where_to.events.category",
-        "pk": 2,
-        "fields": {
-            "name": "Clubs"
-        }
-    },
-    {
-        "model": "where_to.events.category",
-        "pk": 3,
-        "fields": {
-            "name": "Music Festivals"
-        }
-    },
-    {
-        "model": "where_to.events.category",
-        "pk": 4,
-        "fields": {
-            "name": "Charity Work"
-        }
-    }
+    {"model": "events.city", "pk": 1, "fields": {"name": "Timișoara"}},
+    {"model": "events.city", "pk": 2, "fields": {"name": "Cluj-Napoca"}},
+    {"model": "events.city", "pk": 3, "fields": {"name": "București"}},
+    {"model": "events.city", "pk": 4, "fields": {"name": "Brașov"}},
+    {"model": "events.city", "pk": 5, "fields": {"name": "Oradea"}},
+    {"model": "events.category", "pk": 1, "fields": {"name": "University Events"}},
+    {"model": "events.category", "pk": 2, "fields": {"name": "Clubs"}},
+    {"model": "events.category", "pk": 3, "fields": {"name": "Music Festivals"}},
+    {"model": "events.category", "pk": 4, "fields": {"name": "Charity Work"}}
 ]

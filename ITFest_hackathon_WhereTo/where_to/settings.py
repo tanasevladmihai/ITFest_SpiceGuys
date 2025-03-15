@@ -127,7 +127,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
-GOOGLE_MAPS_API_KEY = 'your-google-maps-api-key'
+GOOGLE_MAPS_API_KEY = 'REDACTED'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
