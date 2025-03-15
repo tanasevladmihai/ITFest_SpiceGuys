@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Types</title>
-    <link rel="stylesheet" href="../static/css/styles.css">
+    <!-- Load static files using Django's static tag -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
     <div class="header">
         <h1 class="head-title">Discover events and activities around you</h1>
-        <a href="./city_page.html" class="city-button">
+        <!-- Use Django's URL tag for linking to other pages -->
+        <a href="{% url 'city_page' %}" class="city-button">
             <h3>[insertcityname]</h3>
         </a>
     </div>
