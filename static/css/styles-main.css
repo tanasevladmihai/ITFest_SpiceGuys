@@ -89,37 +89,6 @@ body {
     text-align: center;
 }
 
-.event-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-}
-
-.event-type-block {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #e0f7fa; /* Light cyan background color */
-    padding: 20px;
-    border-radius: 10px; /* Rounded corners */
-    margin: 10px; /* Margin to separate from other elements */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.event-type-block h2 {
-    font-size: 24px;
-    color: #00796b; /* Dark cyan color */
-    margin-bottom: 10px;
-}
-
-.event-type-block p {
-    font-size: 16px;
-    color: #004d40; /* Darker cyan color */
-    line-height: 1.5;
-    text-align: center;
-}
-
 .container {
     display: flex;
     height: 80vh;
